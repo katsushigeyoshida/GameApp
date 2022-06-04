@@ -1,0 +1,54 @@
+﻿<Window x:Class="GameApp.Sudoku"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameApp"
+        mc:Ignorable="d"
+        Title="数独" Name="WindowForm" Height="450" Width="500" Loaded="WindowForm_Loaded" LayoutUpdated="WindowForm_LayoutUpdated" Closing="WindowForm_Closing">
+    <DockPanel>
+        <StatusBar Name="menuBar" DockPanel.Dock="Top">
+            <StatusBarItem DockPanel.Dock="Right">
+                <Button x:Name="creatBtn" Content="問題作成" Click="creatBtn_Click" />
+            </StatusBarItem>
+            <StatusBarItem DockPanel.Dock="Right">
+                <Button x:Name="deleteBtn" Content="削除" Click="deleteBtn_Click" />
+            </StatusBarItem>
+            <StatusBarItem DockPanel.Dock="Right">
+                <Button x:Name="registBtn" Content="登録" Click="registBtn_Click" />
+            </StatusBarItem>
+            <Separator DockPanel.Dock="Right" />
+            <TextBlock Text="問題"/>
+            <StatusBarItem>
+                <ComboBox x:Name="patternCb" Width="310" IsEditable="False" SelectionChanged="patternCb_SelectionChanged" />
+            </StatusBarItem>
+        </StatusBar>
+        <StatusBar DockPanel.Dock="Bottom" >
+            <StatusBarItem DockPanel.Dock="Right">
+                <Button x:Name="helpBtn" Content=" ? " Click="helpBtn_Click"  />
+            </StatusBarItem>
+            <StatusBarItem DockPanel.Dock="Right">
+                <Button x:Name="solverBtn" Content="解答" Click="solverBtn_Click" />
+            </StatusBarItem>
+            <StatusBarItem DockPanel.Dock="Right">
+                <Button x:Name="clearBtn" Content="クリア" Click="clearBtn_Click" />
+            </StatusBarItem>
+            <StatusBarItem DockPanel.Dock="Right">
+                <Button x:Name="restorBtn" Content="復元" Click="restorBtn_Click" />
+            </StatusBarItem>
+            <StatusBarItem DockPanel.Dock="Right">
+                <Button x:Name="saveBtn" Content="保存" Click="saveBtn_Click" />
+            </StatusBarItem>
+            <Separator DockPanel.Dock="Right" />
+            <StatusBarItem DockPanel.Dock="Right">
+                <CheckBox x:Name="SupportCb2" Content="補助機能2" Click="SupportCb2_Click"  />
+            </StatusBarItem>
+            <StatusBarItem DockPanel.Dock="Right">
+                <CheckBox x:Name="SupportCb" Content="補助機能" Click="SupportCb_Click" />
+            </StatusBarItem>
+            <Separator DockPanel.Dock="Right" />
+            <TextBlock />
+        </StatusBar>
+        <Canvas x:Name="canvas" MouseDown="canvas_MouseDown" />
+    </DockPanel>
+</Window>

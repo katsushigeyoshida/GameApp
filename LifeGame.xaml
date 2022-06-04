@@ -1,0 +1,32 @@
+﻿<Window x:Class="GameApp.LifeGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameApp"
+        mc:Ignorable="d"
+        Title="ライフゲーム" Height="450" Width="450" Loaded="Window_Loaded" Closing="Window_Closing" LayoutUpdated="Window_LayoutUpdated">
+    <DockPanel >
+        <StatusBar Name="menuBar" DockPanel.Dock="Top">
+            <StatusBarItem DockPanel.Dock="Right">
+                <Button x:Name="BtDelete" Content="削除" Click="Btn_Click" />
+            </StatusBarItem>
+            <StatusBarItem DockPanel.Dock="Right">
+                <Button x:Name="BtRegist" Content="作成" Click="Btn_Click" />
+            </StatusBarItem>
+            <Separator DockPanel.Dock="Right" />
+            <TextBlock Text="初期パターン"/>
+            <StatusBarItem>
+                <ComboBox x:Name="CbPattern" IsEditable="False" Width="280" SelectionChanged="CbPattern_SelectionChanged" />
+            </StatusBarItem>
+        </StatusBar>
+        <StatusBar DockPanel.Dock="Bottom" >
+            <Button Name="BtStart" Content="開始" Click="Btn_Click" />
+            <Button Name="BtPouse"  Content="中断" Click="Btn_Click" />
+            <Button Name="BtRestart" Content="再開" Click="Btn_Click" />
+            <Label Name="LbGeneration" />
+            <Slider Name="SlWaitTime" Width="200" />
+        </StatusBar>
+        <Canvas x:Name="CvPattern" MouseDown="CvPattern_MouseDown" />
+    </DockPanel>
+</Window>

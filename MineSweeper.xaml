@@ -1,0 +1,33 @@
+﻿<Window x:Class="GameApp.MineSweeper"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameApp"
+        mc:Ignorable="d"
+        Title="MineSweeper" Height="450" Width="500" Loaded="Window_Loaded" LayoutUpdated="Window_LayoutUpdated" Closing="Window_Closing">
+    <DockPanel>
+        <StatusBar Name="menuBar" DockPanel.Dock="Top">
+            <StatusBarItem DockPanel.Dock="Right">
+                <Button x:Name="BtHelp" Content=" ? " Click="BtHelp_Click"   />
+            </StatusBarItem>
+            <StatusBarItem DockPanel.Dock="Right">
+                <Button x:Name="BtReset" Content="リセット" Click="BtReset_Click"  />
+            </StatusBarItem>
+            <TextBlock Text="列数"/>
+            <StatusBarItem>
+                <ComboBox x:Name="CbColCount" Width="50" SelectionChanged="CbColCount_SelectionChanged" />
+            </StatusBarItem>
+            <TextBlock Text="行数"/>
+            <StatusBarItem>
+                <ComboBox x:Name="CbRowCount" Width="50" SelectionChanged="CbRowCount_SelectionChanged" />
+            </StatusBarItem>
+            <TextBlock Text="地雷数"/>
+            <StatusBarItem>
+                <ComboBox x:Name="CbBombCount" Width="50" SelectionChanged="CbBombCount_SelectionChanged" />
+            </StatusBarItem>
+        </StatusBar>
+        <Canvas x:Name="CvBoard" MouseDown="CvBoard_MouseDown" />
+
+    </DockPanel>
+</Window>

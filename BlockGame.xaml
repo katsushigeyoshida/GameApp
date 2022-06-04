@@ -1,0 +1,17 @@
+﻿<Window x:Class="GameApp.BlockGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameApp"
+        mc:Ignorable="d"
+        Title="BlockGame" Height="300" Width="400" Closing="Window_Closing" LayoutUpdated="Window_LayoutUpdated" Loaded="Window_Loaded" KeyDown="Window_KeyDown">
+    <Grid>
+        <Canvas x:Name="CvBoard" MouseLeftButtonDown="CvBoard_MouseLeftButtonDown" Margin="0,0,0,30" />
+        <Button x:Name="BtHelp" Content="?" Width="20"  HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="Button_Click" Margin="0,0,10,5" />
+        <Button x:Name="BtStart" Content="開始(S)" Width="45"  HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="Button_Click" Margin="10,0,0,5" />
+        <Button x:Name="BtEnd" Content="停止(E)" Width="45"  HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="Button_Click" Margin="60,0,0,5" />
+        <Button x:Name="BtLeft" Content="左(←)" Width="40" HorizontalAlignment="Left" Margin="150,0,0,5" VerticalAlignment="Bottom" Click="Button_Click" />
+        <Button x:Name="BtRight" Content="右(→)" Width="40" HorizontalAlignment="Right" Margin="0,0,150,5" VerticalAlignment="Bottom" Click="Button_Click" />
+    </Grid>
+</Window>
