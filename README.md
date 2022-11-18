@@ -4,6 +4,8 @@
 
 非常にシンプルなゲームを作ってみました。  
 
+実行方法は[GameApp.zip](GameApp.zip)をダウンロードし適当なフォルダーに展開してGameApp.exeを実行する。
+
 1) 起動画面(ゲームを選択)  
 <img src="Image/MainWindow.JPG" width="40%">  
 2) 白にしろ  
