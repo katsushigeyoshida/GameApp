@@ -34,20 +34,7 @@ namespace GameApp
 
         private void ProgramList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Window programDlg = null;
-            switch (ProgramList.SelectedIndex) {
-                case 0: programDlg = new AllWhite(); break;
-                case 1: programDlg = new Slide15Game(); break;
-                case 2: programDlg = new Sudoku(); break;
-                case 3: programDlg = new RubikCube(); break;
-                case 4: programDlg = new LifeGame(); break;
-                case 5: programDlg = new BlockGame(); break;
-                case 6: programDlg = new Tetris(); break;
-                case 7: programDlg = new MineSweeper(); break;
-            }
-            if (programDlg != null)
-                programDlg.Show();
-            //programDlg.ShowDialog();
+            executeProg();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -72,6 +59,8 @@ namespace GameApp
                 GameApp.Width = Properties.Settings.Default.GameAppWindowWidth;
                 GameApp.Height = Properties.Settings.Default.GameAppWindowHeight;
             }
+            //  プログラムリストにフォーカスを設定(Key操作のため)
+            ProgramList.Focus();
         }
 
         /// <summary>
@@ -85,6 +74,34 @@ namespace GameApp
             Properties.Settings.Default.GameAppWindowWidth = GameApp.Width;
             Properties.Settings.Default.GameAppWindowHeight = GameApp.Height;
             Properties.Settings.Default.Save();
+        }
+
+        private void ProgramList_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Return) {
+                executeProg();
+            }
+        }
+
+        /// <summary>
+        /// 選択されているプログラムを実行
+        /// </summary>
+        private void executeProg()
+        {
+            Window programDlg = null;
+            switch (ProgramList.SelectedIndex) {
+                case 0: programDlg = new AllWhite(); break;
+                case 1: programDlg = new Slide15Game(); break;
+                case 2: programDlg = new Sudoku(); break;
+                case 3: programDlg = new RubikCube(); break;
+                case 4: programDlg = new LifeGame(); break;
+                case 5: programDlg = new BlockGame(); break;
+                case 6: programDlg = new Tetris(); break;
+                case 7: programDlg = new MineSweeper(); break;
+            }
+            if (programDlg != null)
+                programDlg.Show();
+            //programDlg.ShowDialog();
         }
     }
 }
