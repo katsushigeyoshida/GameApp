@@ -343,7 +343,7 @@ namespace GameApp
             int count = 0;
             ydraw.setColor(Brushes.Black);
             ydraw.setFillColor(Brushes.White);
-            ydraw.drawRectangle(new Point(mOx, mOy), new Point(mOx + mHaba * mYoko, mOy + mHaba * mTate), 0);
+            ydraw.drawWRectangle(new Point(mOx, mOy), new Point(mOx + mHaba * mYoko, mOy + mHaba * mTate), 0);
 
             for (int i = 0; i < mYoko; i++) {
                 for (int j = 0; j < mTate; j++) {

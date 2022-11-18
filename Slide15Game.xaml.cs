@@ -405,7 +405,7 @@ namespace GameApp
             float y = mOy + mHaba * mBoardSize;
             ydraw.setTextSize(mTextSize * 4f);
             ydraw.setTextOverWrite(false);
-            ydraw.drawText("回数 : " + n, new Point(x, y), 0,
+            ydraw.drawWText("回数 : " + n, new Point(x, y), 0,
                 HorizontalAlignment.Center, VerticalAlignment.Top);
             ydraw.setTextOverWrite(true);
         }
@@ -418,7 +418,7 @@ namespace GameApp
         {
             ydraw.setTextSize(mTextSize * 6f);
             ydraw.setTextColor(Brushes.Red);
-            ydraw.drawText(text, new Point(mWidth / 2, mOy), 0,
+            ydraw.drawWText(text, new Point(mWidth / 2, mOy), 0,
                 HorizontalAlignment.Center, VerticalAlignment.Bottom);
             ydraw.setTextColor(Brushes.Black);
         }

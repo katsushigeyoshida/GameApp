@@ -397,7 +397,7 @@ namespace GameApp
             double textSize = ydraw.screen2worldYlength(20);
             ydraw.setTextSize(textSize * sizeRatio);
             ydraw.setTextColor(Brushes.Red);
-            ydraw.drawText(text, new Point(mWidth / 2, mOy + mHaba * mRowCount), 0,
+            ydraw.drawWText(text, new Point(mWidth / 2, mOy + mHaba * mRowCount), 0,
                             System.Windows.HorizontalAlignment.Center, VerticalAlignment.Top);
             ydraw.setTextColor(Brushes.Black);
         }

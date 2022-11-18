@@ -278,7 +278,7 @@ namespace GameApp
             //  画面クリアし背景色と枠設定
             ydraw.clear();
             ydraw.setColor(Brushes.Black);
-            ydraw.drawRectangle(new Point(0, 0), new Point(mWidth, mHeight), 0);
+            ydraw.drawWRectangle(new Point(0, 0), new Point(mWidth, mHeight), 0);
         }
 
         /// <summary>
@@ -386,7 +386,7 @@ namespace GameApp
             ydraw.clear();
             //  初期描画
             ydraw.setFillColor(mBackColor);
-            ydraw.drawRectangle(new Point(0, 0), new Point(mWidth, mHeight), 0);
+            ydraw.drawWRectangle(new Point(0, 0), new Point(mWidth, mHeight), 0);
             //  操作ボタン表示
             ydraw.GButtonDraws();
         }
@@ -403,7 +403,7 @@ namespace GameApp
             //ydraw.drawRectangle(mBlocksBack, 0);
             for (int i = 0; i < mBlocks.Count; i++) {
                 ydraw.setFillColor(mColortable[(int)(mBlocks[i].Top / 28) % 3]);
-                ydraw.drawRectangle(mBlocks[i], 0);
+                ydraw.drawWRectangle(mBlocks[i], 0);
             }
         }
 
@@ -413,7 +413,7 @@ namespace GameApp
         private void drawPaddle()
         {
             ydraw.setFillColor(Brushes.White);
-            ydraw.drawRectangle(mPaddle, 0);
+            ydraw.drawWRectangle(mPaddle, 0);
             mPaddle.X = mPaddle.Left;
         }
 
@@ -423,7 +423,7 @@ namespace GameApp
         private void drawBall()
         {
             ydraw.setFillColor(Brushes.White);
-            ydraw.drawCircle(mBallx, mBally, mBr);
+            ydraw.drawWCircle(new Point(mBallx, mBally), mBr);
         }
 
         /// <summary>
@@ -512,7 +512,7 @@ namespace GameApp
         {
             ydraw.setTextSize(mTextSize * rate);
             ydraw.setTextColor(Brushes.Red);
-            ydraw.drawText(text, new Point(mWidth / 2, mHeight / 2), 0,
+            ydraw.drawWText(text, new Point(mWidth / 2, mHeight / 2), 0,
                 HorizontalAlignment.Center, VerticalAlignment.Center);
             ydraw.setTextColor(Brushes.Black);
         }

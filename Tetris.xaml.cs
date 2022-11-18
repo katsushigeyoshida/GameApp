@@ -262,11 +262,11 @@ namespace GameApp
         {
             ydraw.setTextColor(Brushes.Red);
             ydraw.setTextSize(15);
-            ydraw.drawText(
+            ydraw.drawWText(
                 "キー操作 S:開始/停止, ←:左移動, →:右移動, R:回転, M:左右反転",
                 new Point(mO.X + mHaba * mYoko / 2, mO.Y),
                 0, HorizontalAlignment.Center, VerticalAlignment.Bottom);
-            ydraw.drawText(
+            ydraw.drawWText(
                 "ESC:リセット, PgUp:早い, PgDown:遅い, H:ヘルプ",
                 new Point(mO.X + mHaba * mYoko / 2, mO.Y + 20),
                 0, HorizontalAlignment.Center, VerticalAlignment.Bottom);
@@ -279,7 +279,7 @@ namespace GameApp
         {
             ydraw.setTextColor(Brushes.Red);
             ydraw.setTextSize(17);
-            ydraw.drawText(mEraseCount + " 点",
+            ydraw.drawWText(mEraseCount + " 点",
                 new Point(mO.X + mHaba * mYoko / 2, mO.Y + mHaba * mTate),
                 0, HorizontalAlignment.Center, VerticalAlignment.Top);
         }
@@ -291,10 +291,10 @@ namespace GameApp
         {
             ydraw.setTextColor(Brushes.Red);
             ydraw.setTextSize(50);
-            ydraw.drawText("ご苦労さん",
+            ydraw.drawWText("ご苦労さん",
                 new Point(mO.X + mHaba * mYoko / 2, mO.Y + mHaba * mTate / 2),
                 0, HorizontalAlignment.Center, VerticalAlignment.Bottom);
-            ydraw.drawText(mEraseCount + " 点",
+            ydraw.drawWText(mEraseCount + " 点",
                 new Point(mO.X + mHaba * mYoko / 2, mO.Y + mHaba * mTate / 2),
                 0, HorizontalAlignment.Center, VerticalAlignment.Top);
         }
@@ -376,9 +376,9 @@ namespace GameApp
             //  フィールドの格子表示
             ydraw.setColor(Brushes.Black);
             for (int i = 0; i <= mYoko; i++)
-                ydraw.drawLine(new Point(mO.X + mHaba * i, mO.Y), new Point(mO.X + mHaba * i, mO.Y + mHaba * mTate));
+                ydraw.drawWLine(new Point(mO.X + mHaba * i, mO.Y), new Point(mO.X + mHaba * i, mO.Y + mHaba * mTate));
             for (int i = 0; i <= mTate; i++)
-                ydraw.drawLine(new Point(mO.X, mO.Y + mHaba * i), new Point(mO.X + mHaba * mYoko, mO.Y + mHaba * i));
+                ydraw.drawWLine(new Point(mO.X, mO.Y + mHaba * i), new Point(mO.X + mHaba * mYoko, mO.Y + mHaba * i));
             //  削除行数表示
             if (0 < mEraseCount) {
                 CountMessage();
@@ -527,7 +527,7 @@ namespace GameApp
             Point sp = new Point(mStartPos.X + mPosition.X * mBlockSize,
                             mStartPos.Y + mPosition.Y * mBlockSize);
             Point ep = new Point(sp.X + mBlockSize, sp.Y + mBlockSize);
-            ydraw.drawRectangle(sp, ep, 0);
+            ydraw.drawWRectangle(sp, ep, 0);
         }
     }
 
@@ -585,7 +585,7 @@ namespace GameApp
                                 mStartPos.Y + (mPosition.Y + mBlock[mCurBlockNo, i].Y) * mBlockSize);
                 Point ep = new Point(sp.X + mBlockSize, sp.Y + mBlockSize);
                 //System.Diagnostics.Debug.WriteLine(sp.ToString() + " , " + ep.ToString());
-                mYdraw.drawRectangle(sp, ep, 0);
+                mYdraw.drawWRectangle(sp, ep, 0);
             }
         }
 

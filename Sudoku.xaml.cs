@@ -651,7 +651,7 @@ namespace GameApp
         {
             ydraw.setTextSize(mOy * 0.7f);
             ydraw.setTextColor(Brushes.Red);
-            ydraw.drawText(text, new Point(mWidth / 2, mOy), 0,
+            ydraw.drawWText(text, new Point(mWidth / 2, mOy), 0,
                             System.Windows.HorizontalAlignment.Center, VerticalAlignment.Bottom);
             ydraw.setTextColor(Brushes.Black);
         }
@@ -673,7 +673,7 @@ namespace GameApp
         {
             ydraw.setTextSize(mOy * sizeRatio);
             ydraw.setTextColor(Brushes.Red);
-            ydraw.drawText(text, new Point(mWidth / 2, mOy + mHaba * 9), 0,
+            ydraw.drawWText(text, new Point(mWidth / 2, mOy + mHaba * 9), 0,
                             System.Windows.HorizontalAlignment.Center, VerticalAlignment.Top);
             ydraw.setTextColor(Brushes.Black);
         }
@@ -1112,13 +1112,13 @@ namespace GameApp
             for (int x = 0; x < 9; x++) {
                 for (int y = 0; y < 9; y++) {
                     if (n == getButtonNo(x, y)) {
-                        ydraw.drawLine(startx, mOy + mHaba / 2f + mHaba * y, endx, mOy + mHaba / 2f + mHaba * y);
-                        ydraw.drawLine(mOx + mHaba / 2f + mHaba * x, starty, mOx + mHaba / 2f + mHaba * x, endy);
+                        ydraw.drawWLine(new Point(startx, mOy + mHaba / 2f + mHaba * y), new Point(endx, mOy + mHaba / 2f + mHaba * y));
+                        ydraw.drawWLine(new Point(mOx + mHaba / 2f + mHaba * x, starty), new Point(mOx + mHaba / 2f + mHaba * x, endy));
                         int blockX = x / 3 * 3;
                         int blockY = y / 3 * 3;
                         for (int i = 0; i < 3; i++)
-                            ydraw.drawLine(mOx + mHaba / 3f + mHaba * blockX, mOy + mHaba / 2f + mHaba * (blockY + i),
-                                        mOx - mHaba / 3f + mHaba * (blockX + 3), mOy + mHaba / 2f + mHaba * (blockY + i));
+                            ydraw.drawWLine(new Point(mOx + mHaba / 3f + mHaba * blockX, mOy + mHaba / 2f + mHaba * (blockY + i)),
+                                        new Point(mOx - mHaba / 3f + mHaba * (blockX + 3), mOy + mHaba / 2f + mHaba * (blockY + i)));
                     }
                 }
             }
@@ -1161,10 +1161,10 @@ namespace GameApp
             ydraw.setColor(Brushes.Black);
             ydraw.setThickness(3f);
             for (int x = 0; x <= mBoardSize / 3; x++) {
-                ydraw.drawLine(mOx + mHaba * 3f * x, mOy, mOx + mHaba * 3f * x, mOy + mHaba * 9f);
+                ydraw.drawWLine(new Point(mOx + mHaba * 3f * x, mOy), new Point(mOx + mHaba * 3f * x, mOy + mHaba * 9f));
             }
             for (int y = 0; y <= mBoardSize / 3; y++) {
-                ydraw.drawLine(mOx, mOy + mHaba * 3f * y, mOx + mHaba * 9f, mOy + mHaba * 3f * y);
+                ydraw.drawWLine(new Point(mOx, mOy + mHaba * 3f * y), new Point(mOx + mHaba * 9f, mOy + mHaba * 3f * y));
             }
         }
 

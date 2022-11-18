@@ -361,9 +361,9 @@ namespace GameApp
         {
             ydraw.setTextSize(mTextSize * 4f);
             for (int x = 0; x < mBoardSize; x++) {
-                ydraw.drawText("" + x, (float)x * mHaba + mOx + mHaba / 2f, mOy - (mTextSize * 6f), 0,
+                ydraw.drawWText("" + x, new Point(x * mHaba + mOx + mHaba / 2f, mOy - (mTextSize * 6f)), 0,
                     HorizontalAlignment.Center, VerticalAlignment.Top);
-                ydraw.drawText("" + x, new Point(mOx - (mTextSize * 2f), (float)x * mHaba + mOy + mHaba / 2f), 0,
+                ydraw.drawWText("" + x, new Point(mOx - (mTextSize * 2f), (float)x * mHaba + mOy + mHaba / 2f), 0,
                     HorizontalAlignment.Right, VerticalAlignment.Center);
             }
         }
@@ -378,7 +378,7 @@ namespace GameApp
             float y = mOy + mHaba * mBoardSize;
             ydraw.setTextSize(mTextSize * 4f);
             ydraw.setTextOverWrite(false);
-            ydraw.drawText("回数 : " + n, new Point(x, y), 0,
+            ydraw.drawWText("回数 : " + n, new Point(x, y), 0,
                 HorizontalAlignment.Center, VerticalAlignment.Top);
             ydraw.setTextOverWrite(true);
         }
@@ -391,7 +391,7 @@ namespace GameApp
         {
             ydraw.setTextSize(mTextSize * 8f);
             ydraw.setTextColor(Brushes.Red);
-            ydraw.drawText(text, new Point(mWidth / 2, mHeight / 2), 0,
+            ydraw.drawWText(text, new Point(mWidth / 2, mHeight / 2), 0,
                 HorizontalAlignment.Center, VerticalAlignment.Center);
             ydraw.setTextColor(Brushes.Black);
         }
