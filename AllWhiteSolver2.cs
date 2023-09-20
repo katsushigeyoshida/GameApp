@@ -93,8 +93,6 @@ namespace GameApp
         private PriorityQueue<Score> mScoreBoards;  //  評価点の優先順位キュー
         private string mErrorMsg;                   //  エラーメッセージ
 
-        private YLib ylib = new YLib();
-
         /// <summary>
         /// コンストラクタ (初期登録)
         /// </summary>
@@ -114,7 +112,7 @@ namespace GameApp
         public bool Solver()
         {
             //  初期値登録
-            Score scoreBoard = new Score(ylib.bitsCount(mBoardPattern), mBoardPattern);
+            Score scoreBoard = new Score(YLib.bitsCount(mBoardPattern), mBoardPattern);
             mScoreBoards.Push(scoreBoard);
             Board board = new Board(mBoardPattern, -1);
             mBoards.Add(mBoardPattern, board);
@@ -191,7 +189,7 @@ namespace GameApp
                         //  Boardリストにデータを登録
                         mBoards.Add(nextPattern, new Board(boardPattern, bitLoc(row, col)));
                         //  Scoreキューにデータを登録
-                        Score scoreBoard = new Score(ylib.bitsCount(nextPattern), nextPattern);
+                        Score scoreBoard = new Score(YLib.bitsCount(nextPattern), nextPattern);
                         mScoreBoards.Push(scoreBoard);
                         if (scoreBoard.mScore == 0)         //  反転データがなければ完了
                             return true;
@@ -210,15 +208,15 @@ namespace GameApp
         /// <returns>反転後の盤の状態</returns>
         private uint reverseBoard(uint board, int loc, int boardSize)
         {
-            board = ylib.bitRevers(board, loc);
+            board = YLib.bitRevers(board, loc);
             if (0 < (loc / boardSize))
-                board = ylib.bitRevers(board, loc - boardSize);
+                board = YLib.bitRevers(board, loc - boardSize);
             if ((loc / boardSize) < (boardSize - 1))
-                board = ylib.bitRevers(board, loc + boardSize);
+                board = YLib.bitRevers(board, loc + boardSize);
             if (0 < (loc % boardSize))
-                board = ylib.bitRevers(board, loc - 1);
+                board = YLib.bitRevers(board, loc - 1);
             if ((loc % boardSize) < (boardSize - 1))
-                board = ylib.bitRevers(board, loc + 1);
+                board = YLib.bitRevers(board, loc + 1);
             return board;
         }
 
@@ -233,7 +231,7 @@ namespace GameApp
             for (int row = 0; row < mBoardSize; row++)
                 for (int col = 0; col < mBoardSize; col++) {
                     if (board[row, col] != 0)
-                        cboard = ylib.bitOn(cboard, bitLoc(row, col));
+                        cboard = YLib.bitOn(cboard, bitLoc(row, col));
                 }
 
             return cboard;
